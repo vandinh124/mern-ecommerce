@@ -4,7 +4,6 @@ const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
 
-// console.log(process.env.SECRET_KEY);
 
 const app = express();
 

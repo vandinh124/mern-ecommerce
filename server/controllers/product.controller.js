@@ -24,3 +24,23 @@ module.exports.getOne = (req, res) => {
       .then(() => res.json({ status: 'success' }))
       .catch(err => res.json(err));
   }
+  module.exports.UpdateProduct = (req, res) => {
+    const { name, description, category, price, quantity, imageUrl} = req.body;
+    Author.findByIdAndUpdate(
+      req.params.id,
+      {
+        name,
+        description, 
+        category, 
+        imageUrl, 
+        price, 
+        quantity
+      },
+      {
+        new: true,
+        runValidators: true
+      }
+    )
+      .then(updatedProduct => res.json(updatedProduct))
+      .catch(err => res.status(400 ).json(err));
+  }

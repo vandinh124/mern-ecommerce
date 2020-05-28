@@ -6,4 +6,5 @@ module.exports = function (app){
     app.get('/api/products', authenticate, ProductController.getAll);
     app.get('/api/products/:id', ProductController.getOne);
     app.delete('/api/products/:id', ProductController.delete);
+    app.put('/api/products/:id', ProductController.UpdateProduct)
 }

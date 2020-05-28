@@ -1,8 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+import "./assets/scss/mdb-free.scss"
+import 'mdbreact/dist/css/mdb-free.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
 
 ReactDOM.render(
   <React.StrictMode>

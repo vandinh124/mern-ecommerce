@@ -5,6 +5,7 @@ import NewProduct from './views/NewProduct';
 import Detail from './views/Detail';
 import Login from './views/Login';
 import {Router, Redirect} from '@reach/router';
+import UpdateProduct from './views/UpdateProduct';
 
 
 
@@ -16,7 +17,8 @@ function App() {
             <Login path="login" />
             <AllProducts path="products" />
             <NewProduct path="product/new" />
-            <Detail path="product/:id"></Detail>
+            <Detail path="product/:id"/>
+            <UpdateProduct path="product/:id/edit"/>
             <Redirect
           from="/"
           to="/products"
