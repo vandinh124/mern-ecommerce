@@ -1,0 +1,16 @@
+.login{
+    display: inline-block;
+    width: 600px;
+}
+.register{
+    display: inline-block;
+    width: 500px;
+    vertical-align: top;
+}
+
+form{
+    width: 500px;
+}
+p.h5.text-center.mb-4{
+    font-size: 40px;
+}

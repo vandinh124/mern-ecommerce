@@ -33,7 +33,8 @@ export default function ProductForm({product, method, url, redirectUrl}) {
                 const innerErrorObj = err.response.data.errors;
 
                 for(const key in innerErrorObj){
-                    errs.push(innerErrorObj[key].message);
+                    ////remove properties before.message if validator do not show
+                    errs.push(innerErrorObj[key].properties.message);
                 }
                 setErrors(errs);
             })
