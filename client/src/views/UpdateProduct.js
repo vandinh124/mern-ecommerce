@@ -25,7 +25,7 @@ export default function UpdateProduct({id}) {
                 product = {product}
                 method = "put"
                 url = {"http://localhost:8000/api/products/"+id}
-                redirectUrl={"/products/"+id}
+                redirectUrl={"/product/"+id}
             />
         </div>
     )

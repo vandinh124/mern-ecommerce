@@ -49,7 +49,7 @@ export default function AllProducts() {
                             <td>
                                 <button onClick={() => navigate('/product/' + product._id )}>View Product</button>{'   '}
                                 <button onClick={() => handleDelete(product._id)}>Delete</button>
-                            
+                                <button onClick={() => navigate('/product/' + product._id + '/edit'  )}>Edit</button>
                                 
                             </td>
                         </tr>

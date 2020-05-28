@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { navigate } from '@reach/router';
 import RegistrationForm from '../components/RegistrationForm';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+
+
 
 export default function Login(){
     const [email, setEmail] = useState('');
@@ -16,39 +19,42 @@ export default function Login(){
             password
         },{ withCredentials: true })
             .then(()=> navigate ('/products'))
-            .catch(() => setError('Please check your credentials'));
-            
+            .catch(() => setError('Please check your credentials'));         
             
     }
     return (
         <>
-            <h1>Login</h1>
+            <div className = "login">
             {error && (
                 <p style = {{color: 'red'}}>{error}</p>
             )}
             
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email</label>
-                    <input 
+           
+           <MDBContainer>
+                <MDBRow>
+                    <MDBCol md="6">
+                    <form onSubmit={handleSubmit}>
+                        <p className="h5 text-center mb-4">Sign in</p>
+                        <div className="grey-text">
+                        <MDBInput label="Type your email" icon="envelope" group type="email" validate error="wrong"
+                            success="right" name="email" value={email} onChange={e => setEmail(e.target.value)} />
+                        <MDBInput label="Type your password" icon="lock" group type="password" validate
+                            name="password" 
+                            value={password} 
+                            onChange={e => setPassword(e.target.value)} />
+                        </div>
+                        <div className="text-center">
+                        <MDBBtn type="submit">Login</MDBBtn>
+                        </div>
+                    </form>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer> 
+            </div>
+            <div className="register">
 
-                        name="email" 
-                        value={email} 
-                        onChange={e => setEmail(e.target.value)}>                        
-                    </input>
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input 
-                        type="password"
-                        name="password" 
-                        value={password} 
-                        onChange={e => setPassword(e.target.value)}>                        
-                    </input>
-                </div>
-                <button>Submit</button>
-            </form>
-            <RegistrationForm />
+                <RegistrationForm />
+            </div>
         </>
     )
 }

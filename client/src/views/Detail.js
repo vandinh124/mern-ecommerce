@@ -14,7 +14,7 @@ export default ({id}) => {
     if (product===null) return 'Loading...';
     return ( 
             <div>
-                <button type="button" onClick={() => navigate("/products")}>Product Information/button></button>
+                <button type="button" onClick={() => navigate("/products")}>Product Information</button>
                 <h1>{product.name}</h1>
                 <img src={product.imageUrl} alt={product.name} width="300" height="300"/>  
 
