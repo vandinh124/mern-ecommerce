@@ -3,7 +3,7 @@ import axios from 'axios';
 import { navigate } from '@reach/router';
 import RegistrationForm from '../components/RegistrationForm';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
-
+import './login.css';
 
 
 export default function Login(){
@@ -44,7 +44,7 @@ export default function Login(){
                             onChange={e => setPassword(e.target.value)} />
                         </div>
                         <div className="text-center">
-                        <MDBBtn type="submit">Login</MDBBtn>
+                        <MDBBtn type="submit" color="primary">Login</MDBBtn>
                         </div>
                     </form>
                     </MDBCol>
@@ -52,7 +52,6 @@ export default function Login(){
             </MDBContainer> 
             </div>
             <div className="register">
-
                 <RegistrationForm />
             </div>
         </>
