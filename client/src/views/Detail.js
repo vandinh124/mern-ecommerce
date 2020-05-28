@@ -4,7 +4,7 @@ import { navigate} from '@reach/router';
 
 
 export default ({id}) => {
-    const [product, setProduct] = useState(null);
+    const [product, setProduct] = useState(null); //test
     useEffect(()=>{
         axios.get('http://localhost:8000/api/products/' + id)
             .then(res=>setProduct(res.data))
@@ -23,6 +23,7 @@ export default ({id}) => {
                 <p>Category: {product.category}</p>
                 <p>Quantity: {product.quantity}</p>
                 <p>Price: {product.price}</p>
+                <button  >Add to Cart</button>{'   '}
             </div>           
 
     )
